@@ -1,8 +1,15 @@
 # OxyKit
 
+[![Docs](https://img.shields.io/badge/docs-oxykit.dev-1f6f5b)](https://oxykit.dev)
+[![NuGet](https://img.shields.io/nuget/v/OxyKit.Render.Client.svg?label=Render.Client)](https://www.nuget.org/packages/OxyKit.Render.Client)
+[![NuGet](https://img.shields.io/nuget/v/OxyKit.Mail.Client.svg?label=Mail.Client)](https://www.nuget.org/packages/OxyKit.Mail.Client)
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](https://oxykit.dev/guide/license)
+[![Docs license](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![.NET](https://img.shields.io/badge/.NET-10-512BD4.svg)](https://dotnet.microsoft.com/download)
+
 Toolkit for **document rendering**, **email delivery**, and **job orchestration** — process-isolated engines you wire yourself.
 
-**Website:** [oxykit.dev](https://oxykit.dev) · **GitHub:** [oxykit-dev](https://github.com/oxykit-dev) · **License:** MIT
+**Website:** [oxykit.dev](https://oxykit.dev) · **GitHub:** [oxykit-dev](https://github.com/oxykit-dev)
 
 ## Products
 
