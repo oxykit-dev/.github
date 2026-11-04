@@ -52,7 +52,7 @@ dotnet add package OxyKit.Render.Client
 dotnet add package OxyKit.Mail.Client
 ```
 
-Hosts and Core stay out of NuGet — Client + Contracts only. Flow has no Client package. Observability packages (when published) are for host builders, not document/mail callers.
+Hosts and Core stay out of NuGet — Client + Contracts only. Flow has no Client package. Observability packages are for host builders, not document/mail callers.
 
 ## Docs
 
