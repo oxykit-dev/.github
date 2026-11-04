@@ -18,7 +18,7 @@ Toolkit for **document rendering**, **email delivery**, and **job orchestration*
 | **[OxyKit.Render](https://github.com/oxykit-dev/OxyKit.Render)** | HTTP sidecar: JSON in, PDF / XLSX / CSV / HTML out. Typed .NET client. |
 | **[OxyKit.Mail](https://github.com/oxykit-dev/OxyKit.Mail)** | Email delivery API — queue, retries, DKIM, JWT and API keys. Typed .NET client. |
 | **[oxykit-mail-web](https://github.com/oxykit-dev/oxykit-mail-web)** | Vue dashboard companion for Mail. |
-| **[OxyKit.Flow](https://github.com/oxykit-dev/OxyKit.Flow)** | Job orchestrator — uses `OxyKit.Render.Client`; delivers via file or Mail. |
+| **[OxyKit.Flow](https://github.com/oxykit-dev/OxyKit.Flow)** | Job orchestrator — uses `OxyKit.Render.Client`; delivers via `file` / `mail` / `ftp` / `sftp` (optional zip). |
 
 ## Shared libraries
 
@@ -32,7 +32,7 @@ Toolkit for **document rendering**, **email delivery**, and **job orchestration*
          v
    OxyKit.Flow  ----render---->  OxyKit.Render
          |
-         +----file----> disk
+         +----file / ftp / sftp----> destination
          |
          +----mail---->  OxyKit.Mail  ----SMTP----> inbox
 ```
