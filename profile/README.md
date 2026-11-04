@@ -20,6 +20,12 @@ Toolkit for **document rendering**, **email delivery**, and **job orchestration*
 | **[oxykit-mail-web](https://github.com/oxykit-dev/oxykit-mail-web)** | Vue dashboard companion for Mail. |
 | **[OxyKit.Flow](https://github.com/oxykit-dev/OxyKit.Flow)** | Job orchestrator — uses `OxyKit.Render.Client`; delivers via file or Mail. |
 
+## Shared libraries
+
+| Library | Role |
+|---------|------|
+| **[OxyKit.Observability](https://github.com/oxykit-dev/OxyKit.Observability)** | Shared host helpers: structured JSON logs and request correlation for all hosts; optional OpenTelemetry (OTLP) for Mail and Flow. |
+
 ```text
   [data / triggers]
          |
@@ -46,11 +52,12 @@ dotnet add package OxyKit.Render.Client
 dotnet add package OxyKit.Mail.Client
 ```
 
-Hosts and Core stay out of NuGet — Client + Contracts only. Flow has no NuGet package.
+Hosts and Core stay out of NuGet — Client + Contracts only. Flow has no Client package. Observability packages (when published) are for host builders, not document/mail callers.
 
 ## Docs
 
 - [oxykit.dev](https://oxykit.dev) — landing + guides
+- [Observability](https://oxykit.dev/guide/observability) — logs, correlation, optional OTLP
 - Per-repo `README.md` for quick start
 
 ## Boundaries
@@ -58,7 +65,8 @@ Hosts and Core stay out of NuGet — Client + Contracts only. Flow has no NuGet 
 - **Render** = engine only (no tenancy / billing)
 - **Mail** = mail API (UI is oxykit-mail-web)
 - **Flow** = orchestration only (uses Render’s client + HTTP to Mail)
+- **Observability** = shared host libs — not a fourth product engine
 
 ## Stack
 
-.NET 10 · FastEndpoints (Mail / Flow) · Minimal API (Render) · Vue 3 (mail-web)
+.NET 10 · FastEndpoints (Mail / Flow) · Minimal API (Render) · Vue 3 (mail-web) · OpenTelemetry OTLP (optional, Mail / Flow)
