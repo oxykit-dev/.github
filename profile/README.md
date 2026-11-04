@@ -62,7 +62,7 @@ Hosts and Core stay out of NuGet — Client + Contracts only. Flow has no Client
 
 ## Boundaries
 
-- **Render** = engine only (no tenancy / billing)
+- **Render** = document render engine (HTTP sidecar)
 - **Mail** = mail API (UI is oxykit-mail-web)
 - **Flow** = orchestration only (uses Render’s client + HTTP to Mail)
 - **Observability** = shared host libs — not a fourth product engine
