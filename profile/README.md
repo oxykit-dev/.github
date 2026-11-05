@@ -17,7 +17,6 @@ Toolkit for **document rendering**, **email delivery**, and **job orchestration*
 |---------|------|
 | **[OxyKit.Render](https://github.com/oxykit-dev/OxyKit.Render)** | HTTP sidecar: JSON in, PDF / XLSX / CSV / HTML out. Typed .NET client. |
 | **[OxyKit.Mail](https://github.com/oxykit-dev/OxyKit.Mail)** | Email delivery API — queue, retries, DKIM, JWT and API keys. Typed .NET client. |
-| **[oxykit-mail-web](https://github.com/oxykit-dev/oxykit-mail-web)** | Vue dashboard companion for Mail. |
 | **[OxyKit.Flow](https://github.com/oxykit-dev/OxyKit.Flow)** | Job orchestrator — uses `OxyKit.Render.Client`; delivers via `file` / `mail` / `ftp` / `sftp` (optional zip). |
 
 ## Shared libraries
@@ -46,6 +45,7 @@ Flow never embeds generators. Render stays isolated so alternate engines can sit
 | `OxyKit.Render.Client` (+ Contracts) | [nuget.org](https://www.nuget.org/packages/OxyKit.Render.Client) · [Releases](https://github.com/oxykit-dev/OxyKit.Render/releases) |
 | `OxyKit.Mail.Client` (+ Contracts) | [nuget.org](https://www.nuget.org/packages/OxyKit.Mail.Client) · [Releases](https://github.com/oxykit-dev/OxyKit.Mail/releases) |
 | Runnable hosts (Render / Mail / Flow) | Per-repo Releases — linux-x64 / win-x64 / osx-arm64 zips (needs [.NET 10](https://dotnet.microsoft.com/download/dotnet/10.0)) |
+| [oxykit-console](https://github.com/oxykit-dev/oxykit-console) | [One static zip](https://github.com/oxykit-dev/oxykit-console/releases) per tag (same origin; MIT) |
 
 ```bash
 dotnet add package OxyKit.Render.Client
@@ -63,10 +63,11 @@ Hosts and Core stay out of NuGet — Client + Contracts only. Flow has no Client
 ## Boundaries
 
 - **Render** = document render engine (HTTP sidecar)
-- **Mail** = mail API (UI is oxykit-mail-web)
+- **Mail** = mail API
+- **Console** = [oxykit-console](https://oxykit.dev/mail/auth#console) for Mail, Render, and Flow (suite checkout, not a core)
 - **Flow** = orchestration only (uses Render’s client + HTTP to Mail)
 - **Observability** = shared host libs — not a fourth product engine
 
 ## Stack
 
-.NET 10 · FastEndpoints (Mail / Flow) · Minimal API (Render) · Vue 3 (mail-web) · OpenTelemetry OTLP (optional, Mail / Flow)
+.NET 10 · FastEndpoints (Mail / Flow) · Minimal API (Render) · Vue 3 (oxykit-console) · OpenTelemetry OTLP (optional, Mail / Flow)
