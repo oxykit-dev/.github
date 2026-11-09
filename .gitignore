@@ -1,0 +1,4 @@
+
+# Local agent/editor rules (not tracked)
+.cursor/
+.devin/
